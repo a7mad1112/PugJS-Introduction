@@ -78,5 +78,5 @@ This allows you to see the updated output in real-time without manually running 
 
 To enable watching of Pug.js files, you can use the '-w' or '--watch' flag when running the Pug compiler command. Here's an example:
 ```
-pug -w &lt;template-file&gt;.pug -o &lt;output-directory&gt;
+pug -w <template-file>.pug -o <output-directory>
 ```

@@ -4,6 +4,9 @@
   PugJs Introduction
 </h1>
 
+<p>
+  Pug.js is a high-performance template engine for Node.js and browsers, used to generate HTML markup efficiently. It offers a concise and expressive syntax, enabling developers to write clean and maintainable templates with features like conditionals, loops, and mixins. Pug.js promotes code reusability and simplifies the process of rendering dynamic content in web applications.
+</p>
 
 <details>
 <summary>📖 Table of Contents</summary>
@@ -55,9 +58,9 @@ Getting Started with Pug JS - Step by Step Guide
 
 ### Compile Pug to HTML
 - In your terminal or command prompt, navigate to the project directory.
-- Run the command to compile your Pug template to HTML: 'pug <template-file> -o <output-directory>'
-- Replace '<template-file>' with the path of your Pug template file.
-- Replace '<output-directory>' with the path to the directory where you want the compiled HTML file to be generated.
+- Run the command to compile your Pug template to HTML: 'pug &lt;template-file&gt; -o &lt;output-directory&gt;'
+- Replace '&lt;template-file&gt;' with the path of your Pug template file.
+- Replace '&lt;output-directory&gt;' with the path to the directory where you want the compiled HTML file to be generated.
 - 
 
 ### View the Compiled HTML

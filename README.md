@@ -22,7 +22,7 @@
   - [Compile Pug to HTML](#compile-pug-to-html)
   - [View the Compiled HTML](#view-the-compiled-html)
   - [Make Changes and Repeat](#make-changes-and-repeat)
-- [Usage](#usage)
+- [Watching PugJS Files](#watching-pugjs-files)
 </p>
 </details>
 
@@ -72,5 +72,11 @@ Getting Started with Pug JS - Step by Step Guide
 
 Great job on getting started with Pug JS! &hearts;
 
-## Usage
+## Watching PugJS Files
+Watching Pug.js files refers to a process where the Pug.js compiler automatically monitors for changes in your Pug files and recompiles them into HTML whenever a modification is detected.
+This allows you to see the updated output in real-time without manually running the compilation command each time.
 
+To enable watching of Pug.js files, you can use the '-w' or '--watch' flag when running the Pug compiler command. Here's an example:
+```
+pug -w &lt;template-file&gt;.pug -o &lt;output-directory&gt;
+```

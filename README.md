@@ -23,6 +23,7 @@
   - [View the Compiled HTML](#view-the-compiled-html)
   - [Make Changes and Repeat](#make-changes-and-repeat)
 - [Watching PugJS Files](#watching-pugjs-files)
+- [Understanding the Syntax of Pug.js](#understanding-the-syntax-of-pugjs)
 </p>
 </details>
 
@@ -79,4 +80,34 @@ This allows you to see the updated output in real-time without manually running 
 To enable watching of Pug.js files, you can use the '-w' or '--watch' flag when running the Pug compiler command. Here's an example:
 ```
 pug -w <template-file>.pug -o <output-directory>
+```
+Also you can use the '-p' or '--pretty' to get a clean code.
+For Instance:
+```
+pug -w <template-file>.pug -o <output-directory>./ --pretty
+```
+
+## Understanding the Syntax of Pug.js
+Pug.js utilizes indentation to define the structure of the markup.
+Instead of using opening and closing tags, elements are nested under each other based on indentation levels. 
+This approach reduces clutter and improves code readability. For example:
+```
+html
+  head
+    title My Pug Page
+  body
+    h1 Welcome to Pug.js
+    p Pug.js is a fantastic template engine.
+```
+The compiled code:
+```
+<html>
+  <head>
+    <title>My Pug Page</title>
+  </head>
+  <body>
+    <h1>Welcome to Pug.js</h1>
+    <p>Pug.js is a fantastic template engine.</p>
+  </body>
+</html>
 ```

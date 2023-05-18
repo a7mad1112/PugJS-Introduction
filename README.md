@@ -31,6 +31,7 @@
 - [Unescaped Interpolation](#unescaped-interpolation)
 - [Tag Interpolation](#tag-interpolation)
 - [Mixins](#mixins)
+- [Inheritance: Extends](#inheritance-extends)
 </p>
 </details>
 
@@ -346,3 +347,69 @@ The compiled code would be:
 <p>Hello, Ahmed!</p>
 <p>Hello, LEVI!</p>
 ```
+
+## Inheritance: Extends
+In PugJS, the <strong>'extends'</strong> keyword allows templates to inherit from a base template.
+Example:
+In the <strong>'index.pug'</strong> file:
+```
+html
+  head
+    title My Page
+  body
+    main 
+      h1 Page Content
+      div(class='main-container')
+```
+In the <strong>demo.pug</strong> file:
+```
+extends index.pug
+```
+The compiled code of the <strong>demo.pug</strong> file:
+```
+<html>
+  <head>
+    <title>My Page</title>
+  </head>
+  <body>
+    <main> 
+      <h1>Page Content</h1>
+      <div class="main-container"></div>
+    </main>
+  </body>
+</html>
+```
+In the example above, you simply copy all the content, but often you need to override a block in the parent.
+You can do this using the block keyword. 
+Use the block keyword with the name of the block declared in the parent file and then write the new value.
+
+Example:
+In the <strong>'index.pug'</strong> file:
+```
+html
+  head
+    title My Page
+  body
+    block mainContent
+      main 
+        h1 Page Content
+        div(class='main-container')
+```
+In the <strong>demo.pug</strong> file:
+```
+extends index.pug
+block mainContent
+  div Main Content In Demo File
+```
+The compiled code of the <strong>demo.pug</strong> file:
+```
+<html>
+  <head>
+    <title>My Page</title>
+  </head>
+  <body>
+    <div>Main Content In Demo File</div>
+  </body>
+</html>
+```
+

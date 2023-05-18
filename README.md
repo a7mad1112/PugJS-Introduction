@@ -27,6 +27,9 @@
 - [Pug.js Attributes](#pugjs-attributes)
 - [Include in Pug.js](#include-in-pugjs)
 - [Code in Pug.js](#code-in-pugjs)
+- [Interpolation](#interpolation)
+- [Unescaped Interpolation](#unescaped-interpolation)
+- [Tag Interpolation](#tag-interpolation)
 </p>
 </details>
 
@@ -236,3 +239,81 @@ The compiled code would be:
 <p><span>Ahmed Alawneh</span></p>
 ```
 By using these different types of code in Pug.js, you can leverage the power of JavaScript within your templates and generate dynamic content.
+
+## Interpolation
+In Pug.js, interpolation is a way to dynamically insert JavaScript expressions and variables into the HTML output.
+It is denoted by the '#{...}' syntax and allows for the generation of dynamic content based on variable values or expressions.
+Example:
+```
+- var author = "LEVI"
+p Written with love by #{author}
+```
+The compiled code would be:
+```
+<p>Written with love by LEVI</p>
+```
+You can also leverage the power of JavaScript within interpolation.
+Example:
+```
+- var msg = 'hello world!'
+p The message is #{msg.toUpperCase()}
+```
+The compiled code would be:
+```
+<p>The message is HELLO WORLD!</p>
+```
+Note:
+If you want to include the #{} itself, you can include it inside the interpolation or escape it.
+Example:
+```
+p Escaping works with \#{interpolation}
+p This works too #{'#{interpolation}'}
+```
+The compiled code would be:
+```
+<p>Escaping works with #{interpolation}</p>
+<p>This works too '#{interpolation}</p>
+```
+However, if you add markup inside the interpolation, it will be escaped.
+Example:
+```
+- var msg = '<strong>Hello World!</strong>'
+h2 The message is #{msg}
+```
+The compiled code would be:
+```
+<h2>The message is &lt;strong&gt;Hello World!&lt;/strong&gt;</h2>
+```
+To include markup as intended and have elements nested inside elements, refer to the next section.
+
+## Unescaped Interpolation
+Unescaped interpolation, denoted by '!{...}', allows HTML characters to be interpreted as markup in the resulting string.
+Example:
+```
+- var msg = '<strong>Hello World!</strong>'
+h2 The message is !{msg}
+```
+The compiled code would be:
+```
+<h2>The message is <strong>Hello World!</strong></h2>
+```
+Unescaped interpolation is useful when you want to include HTML markup within the interpolated expression without it being escaped.
+It allows the markup to be rendered as intended in the final output.
+
+## Tag Interpolation
+Tag interpolation is a technique used in PugJS to dynamically insert values into a predefined template using placeholders. It provides a convenient way to generate dynamic content or apply conditional styling to elements. In PugJS, tag interpolation is achieved using the #[tag=value] syntax.
+Example:
+```
+- var name = "Levi"
+p #[span.name] Hello, #{name}!
+```
+The compiled code would be:
+```
+<p><span class="name">Hello, Levi!</span></p>
+```
+
+In the above example, we define a variable name with the value "Levi".
+By using tag interpolation '#[span.name]', we can dynamically insert the value of name into the class attribute of the &lt;span&gt; tag. As a result, the generated HTML will have the class attribute set as "name", and the text content of the &lt;span&gt; tag will be "Hello, Levi!".
+
+Tag interpolation allows you to create flexible templates by injecting values into specific tags or attributes based on variables or expressions. This can greatly enhance the dynamic nature of your templates and simplify the process of generating dynamic content.
+

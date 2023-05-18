@@ -26,6 +26,7 @@
 - [Understanding the Syntax of Pug.js](#understanding-the-syntax-of-pugjs)
 - [Pug.js Attributes](#pugjs-attributes)
 - [Include in Pug.js](#include-in-pugjs)
+- [Code in Pug.js](#code-in-pugjs)
 </p>
 </details>
 
@@ -184,3 +185,54 @@ The compiled code for 'index.pug' would be:
   </body>
 </html>
 ```
+
+## Code in Pug.js
+Pug.js allows you to write inline JavaScript code within your templates.
+There are three types of code you can use: UnBuffered Code, Buffered Code, and Unescaped Buffered Code.
+
+- UnBuffered Code:
+UnBuffered code starts with a hyphen '-'. It does not directly add anything to the output.
+UnBuffered code is typically used for tasks like loops or declaring variables using keywords such as var, let, or const.
+The result of unBuffered code does not directly affect the generated output.
+Example:
+```
+- var stop = 3
+ul
+  - for (var i = 0; i < stop; i++)
+    li Item
+```
+The compiled code would be:
+```
+<ul>
+  <li>Item</li>
+  <li>Item</li>
+  <li>Item</li>
+</ul>
+```
+
+- Buffered Code:
+Buffered code starts with an equal sign '='. It evaluates the JavaScript expression and outputs the result into the template.
+Example:
+```
+- const name = "Ahmed Alawneh"
+p= '<span>' + name + '</span>'
+```
+The compiled code would be:
+```
+<p>&lt;span&gt;Ahmed Alawneh&lt;/span&gt;</p>
+```
+
+- Unescaped Buffered Code:
+Unescaped buffered code starts with an exclamation mark and equal sign '!='.
+It evaluates the JavaScript expression and outputs the result without performing any HTML escaping.
+This is useful when you want to include specific elements or raw HTML content.
+Example:
+```
+- const name = "Ahmed Alawneh"
+p!= '<span>' + name + '</span>'
+```
+The compiled code would be:
+```
+<p><span>Ahmed Alawneh</span></p>
+```
+By using these different types of code in Pug.js, you can leverage the power of JavaScript within your templates and generate dynamic content.

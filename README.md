@@ -24,6 +24,7 @@
   - [Make Changes and Repeat](#make-changes-and-repeat)
 - [Watching PugJS Files](#watching-pugjs-files)
 - [Understanding the Syntax of Pug.js](#understanding-the-syntax-of-pugjs)
+- [Pug.js Attributes](#pugjs-attributes)
 </p>
 </details>
 
@@ -110,4 +111,32 @@ The compiled code:
     <p>Pug.js is a fantastic template engine.</p>
   </body>
 </html>
+```
+
+## Pug.js Attributes
+In Pug.js, you have the flexibility to add attributes to HTML elements easily.
+You can add a single attribute, such as id or class, by using '#' or '.' respectively after the element name.
+For example:
+```
+p.desc This is a paragraph with the class name "desc".
+p#id-1 This is a paragraph with the id "id-1".
+```
+When compiled, the code will generate the following output:
+```
+<p class="desc">This is a paragraph with the class name "desc".</p>
+<p id="id-1">This is a paragraph with the id "id-1".</p>
+```
+In certain cases, you may want to add multiple attributes to an element.
+You can achieve this by using parentheses '( )' and separating the attributes with commas or spaces.
+For example:
+```
+a(class='link' id='id-1' href='https://www.example.com/') Link
+// You can also separate attributes by commas
+a(class='link', id='id-2', href='https://www.example.com/') Link
+```
+The compiled code will result in the following output:
+```
+<a class="link" id="id-1" href="https://www.example.com/">Link</a>
+<!-- You can also separate attributes by commas-->
+<a class="link" id="id-2" href="https://www.example.com/">Link</a>
 ```

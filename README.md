@@ -30,29 +30,29 @@
 - [Interpolation](#interpolation)
 - [Unescaped Interpolation](#unescaped-interpolation)
 - [Tag Interpolation](#tag-interpolation)
+- [Mixins](#mixins)
 </p>
 </details>
-
 
 ## Getting Started
 Getting Started with Pug JS - Step by Step Guide
 ### Installation
 - Ensure that you have Node.js installed on your system.
   You can download and install Node.js from the official website [nodejs](https://nodejs.org).
-- Open your terminal or command prompt and verify that Node.js is installed by running the command: 'node -v'
-- Once Node.js is successfully installed, you can install Pug globally by running the command: 'npm install -g pug'
+- Open your terminal or command prompt and verify that Node.js is installed by running the command: <strong>'node -v'</strong>
+- Once Node.js is successfully installed, you can install Pug globally by running the command: <strong>'npm install -g pug'</strong>
 
 ### Create a Project Directory
 - Create a new directory for your Pug project. 
   You can choose any suitable name for your project.
-- Open your terminal or command prompt and navigate to the project directory using the 'cd' command.
+- Open your terminal or command prompt and navigate to the project directory using the <strong>'cd'</strong> command.
 
 ### Initialize a Node.js Project
-- In the project directory, initialize a new Node.js project by running the command: 'npm init'
+- In the project directory, initialize a new Node.js project by running the command: <strong>'npm init'</strong>
 - Follow the prompts to provide the necessary information for your project, or you can use the default values by pressing Enter for each prompt.
 
 ### Install Pug as a Project Dependency
-- With your Node.js project initialized, you can install Pug as a project dependency by running the command: 'npm install pug'
+- With your Node.js project initialized, you can install Pug as a project dependency by running the command: <strong>'npm install pug'</strong>
 
 ### Create a Pug Template
 - Inside your project directory, create a new file with a .pug extension. 
@@ -65,10 +65,10 @@ Getting Started with Pug JS - Step by Step Guide
 
 ### Compile Pug to HTML
 - In your terminal or command prompt, navigate to the project directory.
-- Run the command to compile your Pug template to HTML: 'pug &lt;template-file&gt; -o &lt;output-directory&gt;'
-- Replace '&lt;template-file&gt;' with the path of your Pug template file.
-- Replace '&lt;output-directory&gt;' with the path to the directory where you want the compiled HTML file to be generated.
-- 
+- Run the command to compile your Pug template to HTML: <strong>'pug &lt;template-file&gt; -o &lt;output-directory&gt;'</strong>
+- Replace <strong>'&lt;template-file&gt;'</strong> with the path of your Pug template file.
+- Replace <strong>'&lt;output-directory&gt;'</strong> with the path to the directory where you want the compiled HTML file to be generated.
+
 
 ### View the Compiled HTML
 - Open the compiled HTML file in a web browser to see the result of your Pug template.
@@ -83,11 +83,11 @@ Great job on getting started with Pug JS! &hearts;
 Watching Pug.js files refers to a process where the Pug.js compiler automatically monitors for changes in your Pug files and recompiles them into HTML whenever a modification is detected.
 This allows you to see the updated output in real-time without manually running the compilation command each time.
 
-To enable watching of Pug.js files, you can use the '-w' or '--watch' flag when running the Pug compiler command. Here's an example:
+To enable watching of Pug.js files, you can use the <strong>'-w'</strong> or <strong>'--watch-'</strong> flag when running the Pug compiler command. Here's an example:
 ```
 pug -w <template-file>.pug -o <output-directory>
 ```
-Also you can use the '-p' or '--pretty' to get a clean code.
+Also you can use the <strong>'-p'</strong> or <strong>'--pretty'</strong> to get a clean code.
 For Instance:
 ```
 pug -w <template-file>.pug -o <output-directory>./ --pretty
@@ -120,7 +120,7 @@ The compiled code:
 
 ## Pug.js Attributes
 In Pug.js, you have the flexibility to add attributes to HTML elements easily.
-You can add a single attribute, such as id or class, by using '#' or '.' respectively after the element name.
+You can add a single attribute, such as id or class, by using <strong>'#'</strong>or <strong>'.'</strong> respectively after the element name.
 For example:
 ```
 p.desc This is a paragraph with the class name "desc".
@@ -132,7 +132,7 @@ When compiled, the code will generate the following output:
 <p id="id-1">This is a paragraph with the id "id-1".</p>
 ```
 In certain cases, you may want to add multiple attributes to an element.
-You can achieve this by using parentheses '( )' and separating the attributes with commas or spaces.
+You can achieve this by using parentheses <strong>'( )'</strong> and separating the attributes with commas or spaces.
 For example:
 ```
 a(class='link' id='id-1' href='https://www.example.com/') Link
@@ -151,7 +151,7 @@ In certain cases, you may encounter situations where you need to reuse a block o
 For instance, consider a website with multiple pages like index, about, and contact, where the header content remains the same across all pages.
 Writing the header code in each file would be redundant and require modifications in multiple places if changes are made.
 
-However, in Pug.js, you can use the 'include' keyword to include the content from a separate file.
+However, in Pug.js, you can use the <strong>'include'</strong> keyword to include the content from a separate file.
 This allows you to write the header code in one file and include it in other files.
 Any modifications made to the included file will automatically reflect in all the files that include it.
 
@@ -172,7 +172,7 @@ html
     h1 Welcome to the Index Page
     // Rest of your code...
 ```
-The compiled code for 'index.pug' would be:
+The compiled code for <strong>'index.pug'</strong> would be:
 ```
 <!DOCTYPE html>
 <html>
@@ -194,7 +194,8 @@ Pug.js allows you to write inline JavaScript code within your templates.
 There are three types of code you can use: UnBuffered Code, Buffered Code, and Unescaped Buffered Code.
 
 - UnBuffered Code:
-UnBuffered code starts with a hyphen '-'. It does not directly add anything to the output.
+UnBuffered code starts with a hyphen <strong>'-'</strong>. 
+It does not directly add anything to the output.
 UnBuffered code is typically used for tasks like loops or declaring variables using keywords such as var, let, or const.
 The result of unBuffered code does not directly affect the generated output.
 Example:
@@ -214,7 +215,8 @@ The compiled code would be:
 ```
 
 - Buffered Code:
-Buffered code starts with an equal sign '='. It evaluates the JavaScript expression and outputs the result into the template.
+Buffered code starts with an equal sign <strong>'='</strong>
+. It evaluates the JavaScript expression and outputs the result into the template.
 Example:
 ```
 - const name = "Ahmed Alawneh"
@@ -226,7 +228,7 @@ The compiled code would be:
 ```
 
 - Unescaped Buffered Code:
-Unescaped buffered code starts with an exclamation mark and equal sign '!='.
+Unescaped buffered code starts with an exclamation mark and equal sign <strong>'!='</strong>.
 It evaluates the JavaScript expression and outputs the result without performing any HTML escaping.
 This is useful when you want to include specific elements or raw HTML content.
 Example:
@@ -242,7 +244,7 @@ By using these different types of code in Pug.js, you can leverage the power of 
 
 ## Interpolation
 In Pug.js, interpolation is a way to dynamically insert JavaScript expressions and variables into the HTML output.
-It is denoted by the '#{...}' syntax and allows for the generation of dynamic content based on variable values or expressions.
+It is denoted by the <strong>'#{...}'</strong> syntax and allows for the generation of dynamic content based on variable values or expressions.
 Example:
 ```
 - var author = "LEVI"
@@ -287,7 +289,7 @@ The compiled code would be:
 To include markup as intended and have elements nested inside elements, refer to the next section.
 
 ## Unescaped Interpolation
-Unescaped interpolation, denoted by '!{...}', allows HTML characters to be interpreted as markup in the resulting string.
+Unescaped interpolation, denoted by <strong>'!{...}'</strong>, allows HTML characters to be interpreted as markup in the resulting string.
 Example:
 ```
 - var msg = '<strong>Hello World!</strong>'
@@ -313,7 +315,34 @@ The compiled code would be:
 ```
 
 In the above example, we define a variable name with the value "Levi".
-By using tag interpolation '#[span.name]', we can dynamically insert the value of name into the class attribute of the &lt;span&gt; tag. As a result, the generated HTML will have the class attribute set as "name", and the text content of the &lt;span&gt; tag will be "Hello, Levi!".
+By using tag interpolation <strong>'#[span.name]'</strong>, we can dynamically insert the value of name into the class attribute of the &lt;span&gt; tag. As a result, the generated HTML will have the class attribute set as <strong>'name'</strong>, and the text content of the &lt;span&gt; tag will be "Hello, Levi!".
 
 Tag interpolation allows you to create flexible templates by injecting values into specific tags or attributes based on variables or expressions. This can greatly enhance the dynamic nature of your templates and simplify the process of generating dynamic content.
 
+## Mixins
+Mixins are a powerful feature in PugJS that allow you to create reusable blocks of code, 
+which can be called and included in other templates. 
+They provide a convenient way to avoid code duplication and promote code reuse.
+
+To define a mixin in PugJS, you can use the <strong>'mixins'</strong> keyword, followed by the mixin name and any arguments it may accept. 
+Here's an example:
+```
+mixin greeting(name)
+  p Hello, #{name}!
+```
+
+In the above example, we define a mixin called <strong>'greeting'</strong>'greeting' that accepts one argument <strong>'name'</strong>.
+Inside the mixin block, we can use the <strong>'name'</strong> variable to dynamically insert the name value into the output.
+This allows us to create a reusable greeting message that can be customized based on the provided name.
+
+To use the defined mixin, you can call it by its name followed by parentheses, passing in the required arguments.
+Here's an example of using the greeting mixin:
+```
++greeting('Ahmed')
++greeting('LEVI')
+```
+The compiled code would be:
+```
+<p>Hello, Ahmed!</p>
+<p>Hello, LEVI!</p>
+```

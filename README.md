@@ -25,6 +25,7 @@
 - [Watching PugJS Files](#watching-pugjs-files)
 - [Understanding the Syntax of Pug.js](#understanding-the-syntax-of-pugjs)
 - [Pug.js Attributes](#pugjs-attributes)
+- [Include in Pug.js](#include-in-pugjs)
 </p>
 </details>
 
@@ -139,4 +140,47 @@ The compiled code will result in the following output:
 <a class="link" id="id-1" href="https://www.example.com/">Link</a>
 <!-- You can also separate attributes by commas-->
 <a class="link" id="id-2" href="https://www.example.com/">Link</a>
+```
+
+## Include in Pug.js
+In certain cases, you may encounter situations where you need to reuse a block of code from one file in another file.
+For instance, consider a website with multiple pages like index, about, and contact, where the header content remains the same across all pages.
+Writing the header code in each file would be redundant and require modifications in multiple places if changes are made.
+
+However, in Pug.js, you can use the 'include' keyword to include the content from a separate file.
+This allows you to write the header code in one file and include it in other files.
+Any modifications made to the included file will automatically reflect in all the files that include it.
+
+Here's an example of how to use the include keyword:
+header.pug file:
+```
+header
+  h1 My Website
+  nav
+    // Navigation links...
+```
+index.pug file:
+```
+doctype html
+html
+  body
+    include header.pug
+    h1 Welcome to the Index Page
+    // Rest of your code...
+```
+The compiled code for 'index.pug' would be:
+```
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h1>My Website</h1>
+      <nav>
+        <!-- Navigation links...-->
+      </nav>
+    </header>
+    <h1>Welcome to the Index Page</h1>
+    <!-- Rest of your code...-->
+  </body>
+</html>
 ```
